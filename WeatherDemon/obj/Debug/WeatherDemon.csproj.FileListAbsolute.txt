@@ -1,1 +1,7 @@
 c:\users\wolf2\documents\visual studio 2015\Projects\WeatherDemon\WeatherDemon\bin\Debug\WeatherDemon.exe.config
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\bin\Debug\WeatherDemon.exe.config
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\bin\Debug\WeatherDemon.exe
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\bin\Debug\WeatherDemon.pdb
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\obj\Debug\WeatherDemon.csprojResolveAssemblyReference.cache
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\obj\Debug\WeatherDemon.exe
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\obj\Debug\WeatherDemon.pdb
