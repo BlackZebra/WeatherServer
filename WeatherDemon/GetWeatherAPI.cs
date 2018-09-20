@@ -15,17 +15,19 @@ namespace WeatherDemon
         /// Конструктор класса
         /// </summary>
         /// <param name="City">Город, написанный латиницей</param>
-        public GetWeatherData(string City)
+        public GetWeatherData(string City, string APIKEY)
         {
             city = City;
             type = "weather";
             dt = DateTime.Now;
+            API_KEY = APIKEY;
         }
-        public GetWeatherData(string City, DateTime DT)
+        public GetWeatherData(string City, DateTime DT, string APIKEY)
         {
             city = City;
             dt = DT;
             type = "forecast";
+            API_KEY = APIKEY;
         }
         //Название города
         private string city;
@@ -37,12 +39,14 @@ namespace WeatherDemon
         private DateTime dt;
         //Тип запроса
         private string type;
+        //Ключ API
+        private string API_KEY;
         /// <summary>
         /// Проверка погоды для данного города
         /// </summary>
         public void CheckWeather()
         {
-            WeatherAPI DataAPI = new WeatherAPI(city,type,dt);
+            WeatherAPI DataAPI = new WeatherAPI(city,type,dt, API_KEY);
             temp = DataAPI.GetTemp(type);
             unit = DataAPI.GetUnit();
         }
@@ -71,10 +75,10 @@ namespace WeatherDemon
         /// Стандартный конструктор
         /// </summary>
         /// <param name="city">Город написанный латиницей</param>
-        public WeatherAPI(string city, string type, DateTime DT)
+        public WeatherAPI(string city, string type, DateTime DT, string APIKEY)
         {
             dt = DT;
-            SetCurrentURL(city, type);
+            SetCurrentURL(city, type, APIKEY);
             xmlDocument = GetXML(currentURL);
         }
         /// <summary>
@@ -124,7 +128,7 @@ namespace WeatherDemon
             return currentURL.Contains("metric")? "Celsius": "Fahrenheit";
         }
         //Ключ WeatherAPI 
-        private const string APIkey = "62296672f275766c561de09e0538ab29";
+        private string APIkey;
         //URL запроса к WeatherAPI
         private string currentURL;
         //XML ответа WeatherAPI
@@ -135,7 +139,7 @@ namespace WeatherDemon
         /// Формирование URL запроса к WeatherAPI
         /// </summary>
         /// <param name="location">Город латиницей</param>
-        private void SetCurrentURL(string location, string param)
+        private void SetCurrentURL(string location, string param, string APIkey)
             {
                 currentURL = $"http://api.openweathermap.org/data/2.5/{param}?q={location}" + $"&mode=xml&units=metric&APPID={APIkey}";
             }

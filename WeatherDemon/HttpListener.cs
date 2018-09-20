@@ -13,15 +13,18 @@ namespace WeatherDemon
     {
         private static HttpListener listener { get; set; }
         private static bool accept { get; set; } = false;
+        private static string APIkey;
+
         /// <summary>
         /// Запуск сервера
         /// </summary>
-        public static void StartServer()
+        public static void StartServer(string ip, string port, string APIKEY)
         {
+            APIkey = APIKEY;
             //IPAddress address = IPAddress.Parse("127.0.0.1");
             listener = new HttpListener();
-            listener.Prefixes.Add("http://127.0.0.1:8080/v1/forecast/");
-            listener.Prefixes.Add("http://127.0.0.1:8080/v1/current/");
+            listener.Prefixes.Add($"http://{ip}:{port}/v1/forecast/");
+            listener.Prefixes.Add($"http://{ip}:{port}/v1/current/");
 
             listener.Start();
             accept = true;
@@ -92,7 +95,7 @@ namespace WeatherDemon
         /// <returns>Строка, готовая для отправки пользователю</returns>
         public static string DataExchangerCurrent (NameValueCollection data)
         {
-            GetWeatherData weather = new GetWeatherData(data.GetValues("city")[0]);
+            GetWeatherData weather = new GetWeatherData(data.GetValues("city")[0], APIkey);
             weather.CheckWeather();
             return weather.GetRequestedData();
         }
@@ -103,7 +106,7 @@ namespace WeatherDemon
         /// <returns>Строка, готовая для отправки пользователю</returns>
         public static string DataExchangerForecast(NameValueCollection data)
         {
-            GetWeatherData weather = new GetWeatherData(data.GetValues("city")[0], UnixTimeStampToDateTime(Convert.ToDouble(data.GetValues("dt")[0])));
+            GetWeatherData weather = new GetWeatherData(data.GetValues("city")[0], UnixTimeStampToDateTime(Convert.ToDouble(data.GetValues("dt")[0])), APIkey);
             weather.CheckWeather();
             return weather.GetRequestedData();
         }

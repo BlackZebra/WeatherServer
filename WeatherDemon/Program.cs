@@ -10,12 +10,20 @@ namespace WeatherDemon
     {
         static void Main(string[] args)
         {
-            string env = "LISTEN_PORT";
-
-            Console.WriteLine(Environment.GetEnvironmentVariable(env,EnvironmentVariableTarget.Process));
-            Environment.SetEnvironmentVariable(env,)
+            string ip;
+            string port;
+            string APIKEY;
+            if (args[1] != null)
+                ip = args[1];
+            else
+                ip = "0.0.0.0";
+            if (args[0] != null)
+                port = args[0];
+            else
+                port = "8080";
+            APIKEY = args[2];
             // Start the server  
-            HttpHelper.StartServer();
+            HttpHelper.StartServer(ip, port);
 
             //Environment.SetEnvironmentVariable[]
             HttpHelper.Listen(); // Start listening.  
