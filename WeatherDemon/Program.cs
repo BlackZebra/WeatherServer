@@ -23,7 +23,7 @@ namespace WeatherDemon
                 port = "8080";
             APIKEY = args[2];
             // Start the server  
-            HttpHelper.StartServer(ip, port);
+            HttpHelper.StartServer(ip, port, APIKEY);
 
             //Environment.SetEnvironmentVariable[]
             HttpHelper.Listen(); // Start listening.  
