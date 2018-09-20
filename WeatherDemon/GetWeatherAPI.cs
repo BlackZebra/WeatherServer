@@ -127,8 +127,8 @@ namespace WeatherDemon
         {
             return currentURL.Contains("metric")? "Celsius": "Fahrenheit";
         }
-        //Ключ WeatherAPI 
-        private string APIkey;
+        ////Ключ WeatherAPI 
+        //private string APIkey;
         //URL запроса к WeatherAPI
         private string currentURL;
         //XML ответа WeatherAPI
