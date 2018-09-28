@@ -12,12 +12,21 @@ mono bin/Debug/WeatherDemon.exe 8080 127.0.0.1 APIKEY
 mono bin/Debug/WeatherDemon.exe <port> <ip> <APIKEY>
 
 ## Request 
+
 GET /v1/forecast/?city=<city>&dt=<timestamp> - returns weather for UNIX timestamp.
+
 GET /v1/forecast/?city=<city> - returns current weather.
+
+## Request example
+
+GET http://127.0.0.1:8080/v1/forecast/?city=Moscow&dt=1537203600
+GET http://127.0.0.1:8080/v1/current/?city=Paris
 
 ## Response example
 {
+
     "city": "moscow",
     "unit": "celsius",
     "temperature": 13.83
+    
 }
