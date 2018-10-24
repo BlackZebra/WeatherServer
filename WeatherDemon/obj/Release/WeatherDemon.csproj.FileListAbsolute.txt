@@ -1,0 +1,6 @@
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\bin\Release\WeatherDemon.exe.config
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\bin\Release\WeatherDemon.exe
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\bin\Release\WeatherDemon.pdb
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\obj\Release\WeatherDemon.csprojResolveAssemblyReference.cache
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\obj\Release\WeatherDemon.exe
+C:\Users\Wolf2\Source\Repos\WeatherGETServer\WeatherDemon\obj\Release\WeatherDemon.pdb
